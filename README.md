@@ -8,42 +8,42 @@ I'm a backend engineer passionate about **distributed systems**, **fault-toleran
 
 ## 🚀 What I'm Building
 
-### 🩹 [exception-healer-lib](https://github.com/kamleshcycode/exception-healer-lib)
+### 🩹 [lazarus-lib](https://github.com/byte-by-k/lazarus-lib)
 > *Spring-native annotation library for intelligent exception healing and async reprocessing*
 
-Going beyond `@Retryable` — `@Heal` captures failed method payloads, persists them, and routes them for reprocessing via **Kafka**, **AWS Lambda**, or a **REST endpoint** of your choice. Never silently drop a failure again.
+Going beyond `@Retryable` — `@Rise` captures failed method payloads, persists them, and routes them for reprocessing via **Kafka**, **AWS Lambda**, or a **REST endpoint** of your choice. Never silently drop a failure again.
 
 ```java
-@Heal(
+@Rise(
   retryOn = {TransientException.class, TimeoutException.class},
-  backoff = @Backoff(delay = 1000, multiplier = 2),
+  backoff = @RiseBackoff(delay = 1000, multiplier = 2),
   reprocessVia = ReprocessingStrategy.KAFKA
 )
-public void processOrder(@HealPayload OrderRequest order) {
+public void processOrder(@RisePayload OrderRequest order) {
     // Your business logic
 }
 ```
 
 ---
 
-### 🤖 [mcp-agent-java](https://github.com/kamleshcycode/mcp-agent-java)
+### 🤖 [mcp-agent-java](https://github.com/byte-by-k/mcp-agent-java)
 > *AI Agent backed by an MCP (Model Context Protocol) server — Java edition*
 
 An AI agent built with **Spring AI** or **LangChain4j** that dynamically discovers and calls tools exposed by an MCP server. Demonstrates the full agent loop: tool discovery → reasoning → invocation → synthesis.
 
 ---
 
-### 🐍 [mcp-agent-python](https://github.com/kamleshcycode/mcp-agent-python)
+### 🐍 [mcp-agent-python](https://github.com/byte-by-k/mcp-agent-python)
 > *AI Agent backed by an MCP server — Python edition*
 
 The same agent pattern implemented in Python using **FastMCP** + **Anthropic SDK** (or LangChain). Lightweight, async-first, and easy to extend with new MCP tool servers.
 
 ---
 
-### 🔍 [exception-healer-mcp](https://github.com/kamleshcycode/exception-healer-mcp)
-> *MCP Server that exposes the Healer database as AI-queryable tools*
+### 🔍 [lazarus-mcp](https://github.com/byte-by-k/lazarus-mcp)
+> *MCP Server that exposes the Lazarus database as AI-queryable tools*
 
-An MCP server that lets AI agents (and humans via Claude) query, inspect, retry, and analyze failed payloads stored by `exception-healer-lib`. Bridge between your healing infrastructure and intelligent agents.
+An MCP server that lets AI agents (and humans via Claude) query, inspect, retry, and analyze failed payloads stored by `lazarus-lib`. Bridge between your healing infrastructure and intelligent agents.
 
 ---
 
@@ -72,8 +72,8 @@ An MCP server that lets AI agents (and humans via Claude) query, inspect, retry,
 ## 📫 Reach me
 
 - 📧 kamleshcy@gmail.com
-- 💼 [LinkedIn](https://linkedin.com/in/kamleshcycode)
-- 🐙 [GitHub](https://github.com/kamleshcycode)
+- 💼 [LinkedIn](https://linkedin.com/in/kamleshcy)
+- 🐙 [GitHub](https://github.com/byte-by-k)
 
 ---
 
