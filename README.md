@@ -11,15 +11,15 @@ I'm a backend engineer passionate about **distributed systems**, **fault-toleran
 ### 🩹 [lazarus-lib](https://github.com/byte-by-k/lazarus-lib)
 > *Spring-native annotation library for intelligent exception healing and async reprocessing*
 
-Going beyond `@Retryable` — `@Rise` captures failed method payloads, persists them, and routes them for reprocessing via **Kafka**, **AWS Lambda**, or a **REST endpoint** of your choice. Never silently drop a failure again.
+Going beyond `@Retryable` — `@Lazarus` captures failed method payloads, persists them, and routes them for reprocessing via **Kafka**, **AWS Lambda**, or a **REST endpoint** of your choice. Never silently drop a failure again.
 
 ```java
-@Rise(
+@Lazarus(
   retryOn = {TransientException.class, TimeoutException.class},
-  backoff = @RiseBackoff(delay = 1000, multiplier = 2),
+  backoff = @LazarusBackoff(delay = 1000, multiplier = 2),
   reprocessVia = ReprocessingStrategy.KAFKA
 )
-public void processOrder(@RisePayload OrderRequest order) {
+public void processOrder(@LazarusPayload OrderRequest order) {
     // Your business logic
 }
 ```
