@@ -1,6 +1,6 @@
 # Hi, I'm Kamlesh 👋
 
-Associate Director @ S&P Global · Previously VP @ Goldman Sachs & Morgan Stanley · 20+ years building Java/Spring Boot microservices, distributed systems, and resilience infrastructure for financial platforms.
+Previously VP @ Goldman Sachs & Morgan Stanley · 20+ years building Java/Spring Boot microservices, distributed systems, and resilience infrastructure for financial platforms.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kamleshcy-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/kamleshcy)
 [![Email](https://img.shields.io/badge/Email-kamleshcy%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kamleshcy@gmail.com)
@@ -35,7 +35,7 @@ Associate Director @ S&P Global · Previously VP @ Goldman Sachs & Morgan Stanle
 
 ## Open Source — The Lazarus Ecosystem
 
-Born from a real production problem at S&P Global: **what happens to your data when all retries are exhausted?**
+**What happens to your data when all retries are exhausted?**
 Spring Retry drops the payload. Lazarus persists it, reprocesses it, and makes it queryable by AI agents.
 
 ```java
