@@ -1,80 +1,99 @@
-# 👋 Hi, I'm Kamlesh
+# Hi, I'm Kamlesh 👋
 
-> **Building resilient, intelligent systems — one annotation at a time.**
+**Associate Director · S&P Global  |  20+ years in Java & Distributed Systems**
 
-I'm a backend engineer passionate about **distributed systems**, **fault-tolerant architectures**, and **AI-powered developer tooling**. I work primarily in **Java** and **Python**, with a focus on making complex failure scenarios first-class citizens in application design.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-kamleshcy-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/kamleshcy)
+[![Email](https://img.shields.io/badge/Email-kamleshcy%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kamleshcy@gmail.com)
+[![Location](https://img.shields.io/badge/Location-Dayton%2C%20NJ-lightgrey?style=flat&logo=googlemaps)](https://maps.google.com/?q=Dayton,NJ)
 
 ---
 
-## 🚀 What I'm Building
+## About Me
 
-### 🩹 [lazarus-lib](https://github.com/byte-by-k/lazarus-lib)
-> *Spring-native annotation library for intelligent exception healing and async reprocessing*
+I'm a senior engineering leader with 20+ years designing and shipping **highly scalable Java/Spring Boot microservices** across some of the world's largest financial institutions — S&P Global, Goldman Sachs, and Morgan Stanley.
 
-Going beyond `@Retryable` — `@Lazarus` captures failed method payloads, persists them, and routes them for reprocessing via **Kafka**, **AWS Lambda**, or a **REST endpoint** of your choice. Never silently drop a failure again.
+My focus is on **distributed systems, resilience engineering, and platform architecture**. I lead globally distributed Agile teams, own end-to-end technical strategy, and stay hands-on through architecture reviews and code.
+
+---
+
+## Experience
+
+| Role | Company | Period |
+|---|---|---|
+| **Associate Director** | S&P Global | Jun 2024 – Present |
+| **Vice President** | Goldman Sachs | Apr 2018 – May 2024 |
+| **Vice President** | Morgan Stanley | Dec 2016 – Mar 2018 |
+| Senior Software Engineer | Open Systems Technologies | Sep 2015 – Dec 2016 |
+| Senior Software Engineer | NTT Data International | Apr 2011 – Sep 2015 |
+| Senior Associate | Cognizant Technology Solutions | Mar 2007 – Dec 2010 |
+
+### Highlights
+
+- **S&P Global** — Architected the Ratings 360 portal (issuer-facing, globally distributed). Built and open-sourced `lazarus-lib`, a plug-and-play exception healing & automated retry framework for Spring Boot. Delivered React micro frontends via AWS CloudFront; drove an **80% performance improvement** through strategic caching.
+- **Goldman Sachs** — Led the Solaris → React UI migration for Asset Servicing. Designed a distributed caching strategy with **Hazelcast** for Payment Microservices. Standardized Kubernetes-based deployments across in-house clusters.
+- **Morgan Stanley** — Pioneered a globally centralized, role-based entitlements framework for equity traders. Architected Spring Boot microservices and leveraged Spring Batch for legacy data migration.
+
+---
+
+## Tech Stack
+
+**Languages & Frameworks**
+
+![Java](https://img.shields.io/badge/Java-17+-orange?style=flat&logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=flat&logo=springboot)
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
+![React](https://img.shields.io/badge/React-JS-61DAFB?style=flat&logo=react&logoColor=black)
+![Vert.x](https://img.shields.io/badge/Vert.x-Framework-purple?style=flat)
+
+**Infrastructure & Cloud**
+
+![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=flat&logo=amazonaws)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Container%20Orchestration-326CE5?style=flat&logo=kubernetes)
+![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?style=flat&logo=docker)
+![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-CI%2FCD-0078D7?style=flat&logo=azuredevops)
+![Kafka](https://img.shields.io/badge/Apache%20Kafka-Streaming-231F20?style=flat&logo=apachekafka)
+
+**Data & Caching**
+
+![Hazelcast](https://img.shields.io/badge/Hazelcast-Distributed%20Cache-FF6600?style=flat)
+![Redis](https://img.shields.io/badge/Redis-Cache-DC382D?style=flat&logo=redis)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-336791?style=flat&logo=postgresql)
+![Sybase](https://img.shields.io/badge/Sybase%2FDB2-Legacy%20DB-grey?style=flat)
+
+---
+
+## Open Source — The Lazarus Ecosystem
+
+Born from a real production problem at S&P Global: **what happens to your data when all retries are exhausted?**
+Spring Retry drops the payload. Lazarus persists it, reprocesses it, and makes it queryable by AI agents.
 
 ```java
 @Lazarus(
-  retryOn = {TransientException.class, TimeoutException.class},
-  backoff = @LazarusBackoff(delay = 1000, multiplier = 2),
-  reprocessVia = ReprocessingStrategy.KAFKA
+    retryOn      = { TransientDataException.class, TimeoutException.class },
+    backoff      = @LazarusBackoff(initialDelay = 500, multiplier = 2, maxDelay = 8000),
+    retryLimit   = 3,
+    reprocessVia = ReprocessingStrategy.KAFKA,
+    topic        = "lazarus.reprocess.orders"
 )
 public void processOrder(@LazarusPayload OrderRequest order) {
-    // Your business logic
+    // Just write the happy path — Lazarus handles the rest
 }
 ```
 
----
-
-### 🤖 [mcp-agent-java](https://github.com/byte-by-k/mcp-agent-java)
-> *AI Agent backed by an MCP (Model Context Protocol) server — Java edition*
-
-An AI agent built with **Spring AI** or **LangChain4j** that dynamically discovers and calls tools exposed by an MCP server. Demonstrates the full agent loop: tool discovery → reasoning → invocation → synthesis.
-
----
-
-### 🐍 [mcp-agent-python](https://github.com/byte-by-k/mcp-agent-python)
-> *AI Agent backed by an MCP server — Python edition*
-
-The same agent pattern implemented in Python using **FastMCP** + **Anthropic SDK** (or LangChain). Lightweight, async-first, and easy to extend with new MCP tool servers.
-
----
-
-### 🔍 [lazarus-mcp](https://github.com/byte-by-k/lazarus-mcp)
-> *MCP Server that exposes the Lazarus database as AI-queryable tools*
-
-An MCP server that lets AI agents (and humans via Claude) query, inspect, retry, and analyze failed payloads stored by `lazarus-lib`. Bridge between your healing infrastructure and intelligent agents.
-
----
-
-## 🛠️ Tech Stack
-
-| Domain | Technologies |
+| Repo | What it does |
 |---|---|
-| **Languages** | Java 17+, Python 3.11+ |
-| **Frameworks** | Spring Boot, Spring AI, LangChain4j, FastAPI, FastMCP |
-| **Messaging** | Apache Kafka, AWS Lambda, REST/Webhooks |
-| **AI / Agents** | Anthropic Claude, MCP (Model Context Protocol), LangChain |
-| **Data** | PostgreSQL, JPA/Hibernate, Flyway |
-| **Build** | Maven, Gradle, pip, Poetry |
+| [**lazarus-lib**](https://github.com/byte-by-k/lazarus-lib) | Spring Boot AOP library — `@Lazarus` annotation, exponential backoff, payload persistence |
+| [**lazarus-mcp**](https://github.com/byte-by-k/lazarus-mcp) | MCP Server — exposes the Lazarus DB as AI-queryable tools (`list_events`, `retry_batch`, …) |
+| [**mcp-agent-java**](https://github.com/byte-by-k/mcp-agent-java) | Java AI agent (Spring AI / LangChain4j) that talks to lazarus-mcp |
+| [**mcp-agent-python**](https://github.com/byte-by-k/mcp-agent-python) | Python AI agent (Anthropic SDK / LangChain) that talks to lazarus-mcp |
 
 ---
 
-## 🧠 Ideas & Philosophy
+## Education
 
-- **Failures are data** — every exception carries context worth preserving and learning from.
-- **Annotations > boilerplate** — developer experience is a feature.
-- **Agents should be tool-aware** — MCP makes AI agents practical, not just powerful.
-- **Cross-language patterns matter** — the same architectural ideas should work in Java and Python.
+**Bachelor of Engineering — Electronics & Communication Engineering**
+Government College of Engineering, Salem, TamilNadu  ·  2000 – 2004
 
 ---
 
-## 📫 Reach me
-
-- 📧 kamleshcy@gmail.com
-- 💼 [LinkedIn](https://linkedin.com/in/kamleshcy)
-- 🐙 [GitHub](https://github.com/byte-by-k)
-
----
-
-*"The best retry strategy is the one that remembers why it failed."*
+*Building things that don't fall apart quietly.*
