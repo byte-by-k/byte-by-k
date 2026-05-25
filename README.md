@@ -1,37 +1,9 @@
 # Hi, I'm Kamlesh 👋
 
-**Associate Director · S&P Global  |  20+ years in Java & Distributed Systems**
+Associate Director @ S&P Global · Previously VP @ Goldman Sachs & Morgan Stanley · 20+ years building Java/Spring Boot microservices, distributed systems, and resilience infrastructure for financial platforms.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kamleshcy-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/kamleshcy)
 [![Email](https://img.shields.io/badge/Email-kamleshcy%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kamleshcy@gmail.com)
-[![Location](https://img.shields.io/badge/Location-Dayton%2C%20NJ-lightgrey?style=flat&logo=googlemaps)](https://maps.google.com/?q=Dayton,NJ)
-
----
-
-## About Me
-
-I'm a senior engineering leader with 20+ years designing and shipping **highly scalable Java/Spring Boot microservices** across some of the world's largest financial institutions — S&P Global, Goldman Sachs, and Morgan Stanley.
-
-My focus is on **distributed systems, resilience engineering, and platform architecture**. I lead globally distributed Agile teams, own end-to-end technical strategy, and stay hands-on through architecture reviews and code.
-
----
-
-## Experience
-
-| Role | Company | Period |
-|---|---|---|
-| **Associate Director** | S&P Global | Jun 2024 – Present |
-| **Vice President** | Goldman Sachs | Apr 2018 – May 2024 |
-| **Vice President** | Morgan Stanley | Dec 2016 – Mar 2018 |
-| Senior Software Engineer | Open Systems Technologies | Sep 2015 – Dec 2016 |
-| Senior Software Engineer | NTT Data International | Apr 2011 – Sep 2015 |
-| Senior Associate | Cognizant Technology Solutions | Mar 2007 – Dec 2010 |
-
-### Highlights
-
-- **S&P Global** — Architected the Ratings 360 portal (issuer-facing, globally distributed). Built and open-sourced `lazarus-lib`, a plug-and-play exception healing & automated retry framework for Spring Boot. Delivered React micro frontends via AWS CloudFront; drove an **80% performance improvement** through strategic caching.
-- **Goldman Sachs** — Led the Solaris → React UI migration for Asset Servicing. Designed a distributed caching strategy with **Hazelcast** for Payment Microservices. Standardized Kubernetes-based deployments across in-house clusters.
-- **Morgan Stanley** — Pioneered a globally centralized, role-based entitlements framework for equity traders. Architected Spring Boot microservices and leveraged Spring Batch for legacy data migration.
 
 ---
 
@@ -58,7 +30,6 @@ My focus is on **distributed systems, resilience engineering, and platform archi
 ![Hazelcast](https://img.shields.io/badge/Hazelcast-Distributed%20Cache-FF6600?style=flat)
 ![Redis](https://img.shields.io/badge/Redis-Cache-DC382D?style=flat&logo=redis)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-336791?style=flat&logo=postgresql)
-![Sybase](https://img.shields.io/badge/Sybase%2FDB2-Legacy%20DB-grey?style=flat)
 
 ---
 
@@ -86,13 +57,6 @@ public void processOrder(@LazarusPayload OrderRequest order) {
 | [**lazarus-mcp**](https://github.com/byte-by-k/lazarus-mcp) | MCP Server — exposes the Lazarus DB as AI-queryable tools (`list_events`, `retry_batch`, …) |
 | [**mcp-agent-java**](https://github.com/byte-by-k/mcp-agent-java) | Java AI agent (Spring AI / LangChain4j) that talks to lazarus-mcp |
 | [**mcp-agent-python**](https://github.com/byte-by-k/mcp-agent-python) | Python AI agent (Anthropic SDK / LangChain) that talks to lazarus-mcp |
-
----
-
-## Education
-
-**Bachelor of Engineering — Electronics & Communication Engineering**
-Government College of Engineering, Salem, TamilNadu  ·  2000 – 2004
 
 ---
 
