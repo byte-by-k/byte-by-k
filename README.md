@@ -1,6 +1,6 @@
 # Hi, I'm Kamlesh 👋
 
-Previously VP @ Goldman Sachs & Morgan Stanley · 20+ years building Java/Spring Boot microservices, distributed systems, and resilience infrastructure for financial platforms.
+Engineering leader, architect, and builder — 20+ years designing distributed systems, shipping full-stack products, leading global teams, and occasionally open-sourcing the tools I wish had existed sooner.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kamleshcy-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/kamleshcy)
 [![Email](https://img.shields.io/badge/Email-kamleshcy%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:kamleshcy@gmail.com)
