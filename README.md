@@ -35,8 +35,15 @@ Engineering leader, architect, and builder — 20+ years designing distributed s
 
 ## Open Source — The Lazarus Ecosystem
 
-**What happens to your data when all retries are exhausted?**
-Spring Retry drops the payload. Lazarus persists it, reprocesses it, and makes it queryable by AI agents.
+### Why Lazarus?
+
+In a large microservices platform, failures are inevitable. A downstream service times out. A database blips under load. A third-party API returns 503.
+
+`@Retryable` and Spring Retry handle the in-process retries well — but they have a hard limit: they retry **synchronously, in the same thread, within the same request lifecycle**. When all retries are exhausted, the exception propagates and **the payload is gone forever**. No record of what failed. No way to reprocess it after the fix goes in. No visibility for the ops team.
+
+I kept running into this in production. Business events vanishing silently. On-call engineers with no way to answer *"what exactly failed, and with what data?"* So I built Lazarus — a Spring Boot library that treats failures as **durable events, not transient noise**.
+
+The name? Lazarus raises the dead. So does the library.
 
 ```java
 @Lazarus(
