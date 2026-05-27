@@ -52,26 +52,35 @@ public void processOrder(@LazarusPayload OrderRequest order) {
 
 I build AI agents that plug into real developer workflows — not demos, but tools that run in production CI/CD pipelines and make operational decisions.
 
-### ai-pr-reviewer
+### [ai-pr-reviewer](https://github.com/byte-by-k/ai-pr-reviewer)
 
 An AI-powered, DevOps-agnostic pull request reviewer. Define your rules in YAML, embed them in ChromaDB, and let Claude semantically match rules to each diff chunk — posting actionable inline comments directly on the PR.
 
-```
-codereviewrules.yaml
-       │
-       ▼  (embed once / on rule change)
-   ChromaDB  ◄── sentence-transformers embeddings
-       │
-       │  semantic search: top-K rules per diff chunk
-       ▼
-  Claude (Anthropic)
-       │  input: diff chunk + relevant rules
-       │  output: structured JSON review comments
-       ▼
-  PRProvider
-  ├── Azure DevOps  ✅
-  ├── GitHub        ✅
-  └── GitLab        (coming soon)
+```mermaid
+flowchart TD
+    subgraph setup ["⚙️ SETUP · run once"]
+        YAML["📄 codereviewrules.yaml\n15 rules"]
+        CLI["embed-rules CLI"]
+        DB[("ChromaDB\nvector store")]
+        YAML --> CLI --> DB
+    end
+
+    subgraph review ["🔍 REVIEW · per PR"]
+        PR["PR Opened\nGitHub / Azure DevOps"]
+        PROVIDER["PRProvider\nfetch diff"]
+        CHUNKS["Diff Chunks\nper hunk"]
+        SEARCH["Semantic Search\ntop-K rules"]
+        CLAUDE["☁️ Claude\nAnthropic API"]
+        VERDICT{Violations\nfound?}
+        COMMENTS["🟠 Post Inline Comments\nRequest Changes"]
+        APPROVE["✅ Approve PR"]
+
+        PR --> PROVIDER --> CHUNKS --> SEARCH --> CLAUDE --> VERDICT
+        VERDICT -->|yes| COMMENTS
+        VERDICT -->|no| APPROVE
+    end
+
+    DB -.->|vector match| SEARCH
 ```
 
 | Repo | What it does |
