@@ -50,7 +50,7 @@ public void processOrder(@LazarusPayload OrderRequest order) {
 
 ## AI & Agent Engineering
 
-I build AI agents that plug into real developer workflows — not demos, but tools that run in production CI/CD pipelines and make operational decisions.
+These are personal POCs — AI agents built to solve real engineering problems I've run into, not toy examples.
 
 ### [ai-pr-reviewer](https://github.com/byte-by-k/ai-pr-reviewer)
 
