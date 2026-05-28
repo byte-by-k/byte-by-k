@@ -1,4 +1,4 @@
-# Hi, I'm Kamlesh 👋
+# Hi, I'm Kamlesh
 
 Engineering leader, architect, and builder — 20+ years designing distributed systems, shipping full-stack products, leading global teams, and occasionally open-sourcing the tools I wish had existed sooner.
 
