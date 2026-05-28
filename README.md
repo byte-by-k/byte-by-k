@@ -4,16 +4,6 @@ Engineering leader, architect, and builder — 20+ years designing distributed s
 
 ---
 
-## Tech Stack
-
-**Languages & Frameworks**
-
-**Infrastructure & Cloud**
-
-**Data & Caching**
-
----
-
 ## Open Source — The Lazarus Ecosystem
 
 ### Why Lazarus?
